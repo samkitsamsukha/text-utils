@@ -40,6 +40,7 @@ function App() {
       <BrowserRouter>
         <Navbar title="Text Utils Application" about="About Us" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
+        <TextForm heading="Enter the text which has to be analysed" mode={mode} toggleMode={toggleMode} showAlert={showAlert} />
         <div className="container my-3">
           <Routes>
             <Route exact path="/about" element={<About />} />
