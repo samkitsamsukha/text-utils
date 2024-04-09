@@ -8,6 +8,7 @@ import {
   Routes,
   BrowserRouter,
 } from "react-router-dom";
+import introJs from 'intro.js';
 
 function App() {
   const [mode, setMode] = useState('light'); // state variable which tells whether dark mode is enabled or not
@@ -51,5 +52,47 @@ function App() {
     </>
   );
 }
+
+const intro = introJs();
+intro.setOptions({
+  steps:[
+    {
+      title: 'Welcome to Text-Utils',
+      intro: 'This is a simple text utility website'
+    },
+    {
+      element: document.querySelector('.home'),
+      title: 'Home Page',
+      intro: 'This is the main page of the website where you can perform text-utility applications'
+    },
+    {
+      element: document.querySelector('.about'),
+      title: 'About Us',
+      intro: 'Head over to this page to read about the website and the author'
+    },
+    {
+      element: document.querySelector('.toggleMode'),
+      title: 'Dark/Ligh Mode',
+      intro: 'Use this switch to toggle dark / light mode'
+    },
+    {
+      element: document.querySelector('.myBox'),
+      title: 'Text Area',
+      intro: 'You can write your own text here and perform several operations on it'
+    },
+    {
+      element: document.querySelector('.btnGroup'),
+      title: 'Operation',
+      intro: 'Click on any of the  buttons to perform the suitable operations'
+    },
+    {
+      element: document.querySelector('.preview'),
+      title: 'Text Preview',
+      intro: 'This space will provide you a preview of your text'
+    }
+],
+// dontShowAgain: true,
+});
+intro.start();
 
 export default App;

@@ -50,21 +50,23 @@ export default function TextForm(props) {
         <div className={`container my-3`}>
             <h1>{props.heading}</h1>
             <div className="mb-3">
-                <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8" placeholder='Enter text here'></textarea>
+                <textarea className="form-control myBox" value={text} onChange={handleOnChange} id="myBox" rows="8" placeholder='Enter text here'></textarea>
             </div>
-            <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
-            <button className="btn btn-primary mx-1 my-1" onClick={handleLowClick}>Convert to Lowercase</button>
-            <button className="btn btn-primary mx-1 my-1" onClick={handleSpeak}>Hear the text</button>
-            <button className="btn btn-primary mx-1 my-1" onClick={handleClear}>Clear Text</button>
-            <button className="btn btn-primary mx-1 my-1" onClick={handleCopy}>Copy Text</button>
-            <button className="btn btn-primary mx-1 my-1" onClick={handleSpaces}>Remove Extra Spaces</button>
+            <div className="btnGroup">
+                <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
+                <button className="btn btn-primary mx-1 my-1" onClick={handleLowClick}>Convert to Lowercase</button>
+                <button className="btn btn-primary mx-1 my-1" onClick={handleSpeak}>Hear the text</button>
+                <button className="btn btn-primary mx-1 my-1" onClick={handleClear}>Clear Text</button>
+                <button className="btn btn-primary mx-1 my-1" onClick={handleCopy}>Copy Text</button>
+                <button className="btn btn-primary mx-1 my-1" onClick={handleSpaces}>Remove Extra Spaces</button>
+            </div>
         </div>
         <div className="container my-3">
             <h3>Your Text Summary</h3>
             {/* text.split(" ") creates an array with all the words and it's length is printed   */}
             <p><b>{text.split(" ").length-1}</b> words and <b>{text.length}</b> characters</p>
             <p>You can read the entire text in approximately <b>{0.008 * (text.split(" ").length -1)}   </b> minutes</p>
-            <h3>Preview</h3>
+            <h3 className='preview'>Preview</h3>
             <p>{text.length>0?text:`Enter your text in the space above to preview it.`}</p>
         </div>
         </>
