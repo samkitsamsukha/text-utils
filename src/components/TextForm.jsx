@@ -74,7 +74,7 @@ export default function TextForm(props) {
         <div className="container my-3">
             <h3>Your Text Summary</h3>
             {/* text.split(" ") creates an array with all the words and it's length is printed   */}
-            <p><b>{text.split(" ").filter((element)=>{return element.length!==0}).length}</b> words and <b>{text.length}</b> characters</p>
+            <p><b>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length}</b> words and <b>{text.length}</b> characters</p>
             <p>You can read the entire text in approximately <b>{0.008 * (text.split(" ").length -1)}   </b> minutes</p>
             <h3 className='preview'>Preview</h3>
             <p>{text.length>0?text:`Nothing to preview!`}</p>
