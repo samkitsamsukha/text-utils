@@ -43,8 +43,8 @@ function App() {
         <Alert alert={alert} />
         <div className="container my-3">
           <Routes>
-            <Route exact path="/about" element={<About />} />
-            <Route exact path="/" element={<TextForm heading="Enter the text which has to be analysed" mode={mode} toggleMode={toggleMode} showAlert={showAlert} />} />
+            <Route exact path="/about" element={<About mode={mode} toggleMode={toggleMode} showAlert={showAlert} />} />
+            <Route exact path="/" element={<TextForm heading="Try TextUtils - Word/Character Counter, Text to Speech, Lower <-> Upper and more..." mode={mode} toggleMode={toggleMode} showAlert={showAlert} />} />
           </Routes>
         </div>
       </BrowserRouter>
@@ -72,7 +72,7 @@ intro.setOptions({
     },
     {
       element: document.querySelector('.toggleMode'),
-      title: 'Dark/Ligh Mode',
+      title: 'Dark/Light Mode',
       intro: 'Use this switch to toggle dark / light mode'
     },
     {
